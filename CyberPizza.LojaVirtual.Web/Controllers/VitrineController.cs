@@ -7,16 +7,19 @@ using CyberPizza.LojaVirtual.Dominio.Repositorio;
 
 namespace CyberPizza.LojaVirtual.Web.Controllers
 {
-    public class ProdutoController : Controller
+    public class VitrineController : Controller
     {
         private ProdutosRepositorio _repositorio;
-
-
-        // GET: Produto
-        public ActionResult Index()
+        public int ProdutosPorPagina = 2;
+        // GET: Vitrine
+           public ActionResult ListaProdutos(int pagina = 1)
         {
             _repositorio = new ProdutosRepositorio();
-            var produtos = _repositorio.Produtos.Take(2);
+            var produtos = _repositorio.Produtos
+                .OrderBy(p => p.Nome)
+                .Skip((pagina - 1) * ProdutosPorPagina)
+                .Take(ProdutosPorPagina);
+            
             return View(produtos);
         }
     }
