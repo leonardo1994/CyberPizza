@@ -1,18 +1,191 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿/*
+    Definição da Home
+*/
+
+/*
+    Definição da caixa de cep
+*/
+.page-home {
+    max-width: 450px;
+    margin: auto;
+    /*margin-top: 70px;*/
+    background: maroon;
+    color: white;
+    -webkit-box-shadow: #000000 1px 1px 1px 1px;
+    -ms-box-shadow: #000000 1px 1px 1px 1px;
+    box-shadow: #000000 1px 1px 10px 1px;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    .page-home #panelHeader {
+        background-color: orangered;
+        border: none;
+        color: white;
+    }
+
+    .page-home span {
+        color: red;
+        background-color: black;
+        border: none;
+    }
+
+#divBtnCep {
+    margin-bottom: 15px;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+.inputCep {
+    text-align: right;
 }
 
+/*
+        Definição do Passo a Passo
+    */
+
+.page-passoPasso {
+    margin: auto;
+    /*margin-top: 30px;*/
+    max-width: 800px;
+}
+
+#tituloPasso {
+    background-color: firebrick;
+    color: white;
+}
+
+/*
+    Definição página de Login
+*/
+
+.login-margin {
+    margin: auto;
+    /*margin-top: 80px;*/
+    max-width: 400px;
+}
+
+/*
+    Definição página de Register
+*/
+
+.input-width {
+    -moz-min-width: 100px;
+    -ms-min-width: 100px;
+    -o-min-width: 100px;
+    -webkit-min-width: 100px;
+    min-width: 100px;
+}
+
+/*
+    Pagina Sobre
+*/
+
+.div-sobre-principal {
+    /*margin-top: 70px;*/
+}
+
+.img-sobre {
+    max-width: 500px;
+    -webkit-box-shadow: #000000 2px 2px 10px 1px;
+    -ms-box-shadow: #000000 2px 2px 10px 1px;
+    box-shadow: #000000 2px 2px 10px 1px;
+    width: 100%;
+    -moz-min-width: 100px;
+    -ms-min-width: 100px;
+    -o-min-width: 100px;
+    -webkit-min-width: 100px;
+    min-width: 250px;
+}
+
+.text-justify {
+    text-align: justify;
+    -webkit-font-size-adjust: 10;
+    font-size: x-large;
+    font-style: italic;
+}
+
+/*
+    Pagina Cardápio
+*/
+
+.tipo-pizza {
+    margin: auto;
+    /*margin-top: 70px;*/
+}
+
+.img-tipo-pizza {
+    margin: auto;
+    padding: 20px;
+}
+
+.img-tipo {
+    -webkit-box-shadow: #000000 2px 2px 10px 2px;
+    -ms-box-shadow: #000000 2px 2px 10px 2px;
+    box-shadow: #000000 2px 2px 10px 2px;
+    width: 100%;
+    height: auto;
+    min-height: 250px;
+    max-width: 350px;
+
+}
+
+.img-tipo-pizza img:hover {
+    -ms-opacity: 0.9;
+    opacity: 0.9;
+    box-shadow: #000000 5px 5px 20px 5px;
+}
+
+/*
+    Definição Página Produto
+*/
+.panel-header {
+    background-color: darkorange;
+}
+.produto-margin {
+    margin: auto;
+}
+
+.produto-padding {
+    padding: 5px;
+}
+.img-padding {
+    padding-top: 5px;
+}
+.row-width {
+    width: 70%;
+    margin: auto;
+}
+
+.font-size {
+    font-size: 13px;
+}
+
+/*
+    Página Partial Carrinho
+*/
+
+.result-carrinho {
+    padding: 5px;
+}
+
+/*
+    Página Carrinho
+*/
+
+.img-width {
+    max-width: 80px;
+    width: 100%;
+    -moz-min-width: 20px;
+    -ms-min-width: 20px;
+    -o-min-width: 20px;
+    -webkit-min-width: 20px;
+    min-width: 20px;
+}
+
+.btn-finaliza-pedido {
+    padding: 10px;
+}
+
+/*
+    Modal Apresentação do produto
+*/
+.text-padding {
+    padding: 10px;
+}

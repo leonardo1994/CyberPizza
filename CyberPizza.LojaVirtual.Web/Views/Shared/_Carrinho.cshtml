@@ -1,0 +1,21 @@
+﻿@*@using CyberPizzaMvc.Models.ShoppingCard*@
+@*@{ 
+    int countCarrinho;
+    if (Session["CarrinhoCompra"] != null)
+    {
+        var listaPizza = HttpContext.Current.Session["CarrinhoCompra"] as List<ItemCarrinho>;
+        countCarrinho = listaPizza.Count();
+    }
+    else
+    {
+        countCarrinho = 0;
+    }
+    
+}*@
+<div class="col-md-12 text-right">
+    <a class="btn btn-success btn-lg"
+       href="@Url.Action("Index", "Carrinho")">
+        <i class="glyphicon glyphicon-shopping-cart"><span class=" result-carrinho">@*@countCarrinho*@</span></i>
+    </a>
+</div>
+

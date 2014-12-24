@@ -90,6 +90,22 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\imgCardapio\Pizzas\doces.jpg" />
+    <Content Include="Content\imgCardapio\Pizzas\salga.jpg" />
+    <Content Include="Content\imgCardapio\Pizzas\vegeta.jpg" />
+    <Content Include="Content\imgHome\doces.jpg" />
+    <Content Include="Content\imgHome\pizzaBackgroundBody.jpg" />
+    <Content Include="Content\imgHome\vegeta.jpg" />
+    <Content Include="Content\imgPassoPasso\1passo.png" />
+    <Content Include="Content\imgPassoPasso\2passo.png" />
+    <Content Include="Content\imgPassoPasso\3passo.png" />
+    <Content Include="Content\imgPassoPasso\4passo.png" />
+    <Content Include="Content\imgProdutos\pizza-calabresa.jpg" />
+    <Content Include="Content\imgProdutos\pizza-mussarela.jpg" />
+    <Content Include="Content\imgProdutos\pizza-portuguesa.jpg" />
+    <Content Include="Content\imgSobre\pizzaBackgroundBody.jpg" />
+    <Content Include="Content\img\glyphicons-halflings-white.png" />
+    <Content Include="Content\img\glyphicons-halflings.png" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -114,6 +130,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\VitrineController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -130,6 +148,15 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Vitrine\ListaProdutos.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_Carrinho.cshtml" />
+    <Content Include="Views\Shared\_PassoPassoPartial.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Login\Register.cshtml" />
+    <Content Include="Views\Login\_PartialLogado.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\ProdutoDetalhes.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -139,6 +166,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\imgCardapio\Bebidas\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CyberPizza.LojaVirtual.Dominio\CyberPizza.LojaVirtual.Dominio.csproj">

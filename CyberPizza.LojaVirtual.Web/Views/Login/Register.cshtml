@@ -1,0 +1,122 @@
+﻿@using CyberPizzaMvc.Models
+@model CyberPizzaMvc.Models.User.W01 
+
+@{
+    ViewBag.Title = "Registro";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Register", "Login", FormMethod.Post))
+{
+    @Html.ValidationSummary()
+    <fieldset>
+        <legend>Dados Cadastrais</legend>
+        @{
+    ViewBag.Array_002 = new SelectList(new object[]
+            {
+                new {valor = 0, Texto = "Sr."},
+                new {Valor = 1, Texto = "Sra."},
+                new {Valor = 2, Texto = "Srta."},
+                new {Valor = 3, Texto = "Dr."},
+                new {Valor = 4, Texto = "Dra."},
+
+            }, "Valor", "Texto");
+        }
+        <div class="row">
+            <div class="col-xs-2">
+                <label>Titulo</label>
+                @Html.DropDownListFor(w01 => w01.ARRAY_002, (SelectList)ViewBag.Array_002, new { @class = "form-control input-width" })
+            </div>
+            <div class="col-xs-4">
+                <label>Nome</label>
+                @Html.TextBoxFor(w01 => w01.W01_001_C, new {@class = "form-control input-width", PlaceHolder = "Nome Completo"})
+            </div>
+            <div class="col-xs-6">
+                <label>Email</label>
+                @Html.TextBoxFor(w01 => w01.W01_002_C, new {@class = "form-control input-width", PlaceHolder = "E-mail"})
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-xs-3">
+                <label>Senha</label>
+                @Html.TextBoxFor(w01 => w01.W01_003_C, new {@class = "form-control input-width", PlaceHolder = "*******", type = "password"})
+            </div>
+            <div class="col-xs-3">
+                <label>Confirmar Senha</label>
+                <input type="password" class="form-control input-width" placeholder="******">
+            </div>
+            <div class="col-xs-3">
+                <label>Sexo</label>
+                @{
+                    ViewBag.Array_001 = new SelectList(new object[]
+                    {
+                        new {valor = 0, Texto = "Homen"},
+                        new {Valor = 1, Texto = "Mulher"}
+                    }, "Valor", "Texto");
+                }
+                @Html.DropDownListFor(w01 => w01.ARRAY_001, (SelectList) ViewBag.Array_001, new {@class = "form-control input-width"})
+            </div>
+            <div class="col-xs-3">
+                <label>Data de nascimento</label>
+                @Html.TextBoxFor(w01 => w01.W01_004_D, new {@class = "form-control input-width", type = "date", placeholder = "Data nascimento"})
+            </div>
+        </div>
+    </fieldset>
+    <br />
+    <fieldset>
+        <legend>Endereço de entrega</legend>
+        <div class="row">
+            <div class="col-xs-3">
+                <label>Cep</label>
+                @Html.TextBoxFor(w01 => w01.W01_005_C, new { @class = "form-control input-width", PlaceHolder = "Cep: Ex.: 065353-928" })
+            </div>
+        </div>
+            <div class="row">
+                <div class="col-xs-4">
+                    <label>Endereço</label>
+                    @Html.TextBoxFor(w01 => w01.W01_006_C, new { @class = "form-control input-width", PlaceHolder = "Endereço: Ex.: Av. Paulista" })
+                </div>
+                <div class="col-xs-2">
+                    <label>Número</label>
+                    @Html.TextBoxFor(w01 => w01.W01_007_N, new { @class = "form-control input-width", PlaceHolder = "Numero" })
+                </div>
+                <div class="col-xs-3">
+                    <label>Bairro</label>
+                    @Html.TextBoxFor(w01 => w01.W01_008_C, new { @class = "form-control input-width", PlaceHolder = "Bairro: Ex.: Alphaville" })
+                </div>
+                <div class="col-xs-3">
+                    <label>Cidade</label>
+                    @Html.TextBoxFor(w01 => w01.W01_009_C, new { @class = "form-control input-width", PlaceHolder = "Cidade: Ex.: Barueri" })
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-xs-4">
+                    <label>Complemento</label>
+                    @Html.TextBoxFor(w01 => w01.W01_010_C, new { @class = "form-control input-width", PlaceHolder = "Complemento: Ex.: Casa A" })
+                </div>
+                <div class="col-xs-2">
+                    <label>Estado</label>
+                    @Html.TextBoxFor(w01 => w01.W01_011_C, new { @class = "form-control input-width", PlaceHolder = "Estado: Ex.: SP" })
+                </div>
+                <div class="col-xs-6">
+                    <label>Obervações</label>
+                    @Html.TextBoxFor(w01 => w01.W01_012_C, new { @class = "form-control input-width", PlaceHolder = "Observação: Ex.: Ao lado do Walmart" })
+                </div>
+            </div>
+            <br>
+</fieldset>
+    <div class="form-group text-right">
+        <div class="col-lg-10 col-lg-offset-2">
+            <button class="btn btn-default">Cancelar</button>
+            <button type="submit" class="btn btn-primary">Confirmar</button>
+        </div>
+    </div>
+}     
+
+@section register {
+    <h1>Obrigado pela preferêcia</h1>
+}
+
+

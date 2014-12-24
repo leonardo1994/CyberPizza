@@ -1,0 +1,26 @@
+﻿@model CyberPizza.LojaVirtual.Dominio.Entidades.Produto
+
+<div class="col-md-3">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <strong>@Model.Nome</strong>
+        </div>
+        <div class="panel-body">
+            <img class="img-circle img-responsive" alt="" src="@Model.Imagens" />
+            <div class="text-center">
+                <h3>
+                    <span class="label label-danger">@Model.Preco.ToString("C")</span>
+                </h3>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <div class="btn-group">
+                @Html.ActionLink("Adicionar ", "Index", "ViewLyubomir", new { ukey = Model.ProdutoId }, new { @class = " btn btn-primary btn-sm" })
+                <button type="button" class="btn btn-default btn-sm link" data-container="body" data-toggle="popover" data-placement="bottom"
+                        data-title=@Model.Nome data-content="@Model.Descricao">
+                    Detalhe
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

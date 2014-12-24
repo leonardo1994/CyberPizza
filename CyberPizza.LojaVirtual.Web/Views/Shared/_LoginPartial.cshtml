@@ -1,0 +1,22 @@
+﻿
+@if (Session["Logado"] != null)
+{
+    using (Html.BeginForm("LogoutUser", "Login", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            @Html.ActionLink("Hello !", "Register", "Login", routeValues: null, htmlAttributes: new {title = "Manage"})
+        </li>                                                          
+        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+    </ul>
+    }
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("Resgistrar", "Register", "Login", routeValues: null, htmlAttributes: new {id = "registerLink"})</li>
+      <li>@Html.ActionLink("Log in", "Index", "Login", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}             
+
+
