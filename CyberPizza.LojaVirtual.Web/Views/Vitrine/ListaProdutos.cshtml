@@ -1,15 +1,22 @@
 ﻿@using CyberPizza.LojaVirtual.Web.HtmlHelpers
 @model CyberPizza.LojaVirtual.Web.Models.ProdutosViewModel
 
-<div class="container container-fluid page-passoPasso">
-    <div class="row">
-        @foreach (var p in Model.Produtos)
-        {
-            @Html.Partial("ProdutoDetalhes", p)
-        }
+<div class="row">
+    <div id="categoria" class="col-md-2">
+        @Html.Action("Menu", "Categoria")
     </div>
-    <div class="btn-group pull-right">
-        @Html.PageLinks(Model.Paginacao, x => Url.Action("ListaProdutos", new {Pagina = x}))
+    <div class="col-md-10">
+        <div class="container container-fluid page-passoPasso">
+            <div class="row">
+                @foreach (var p in Model.Produtos)
+                {
+                    @Html.Partial("ProdutoDetalhes", p)
+                }
+            </div>
+            <div class="btn-group col-xs-12">
+                @Html.PageLinks(Model.Paginacao, x => Url.Action("ListaProdutos", new {Pagina = x, categoria = Model.CategoriaAtual}))
+            </div>
+        </div>
     </div>
 </div>
 

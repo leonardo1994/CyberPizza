@@ -10,6 +10,8 @@ namespace CyberPizza.LojaVirtual.Web.HtmlHelpers
         public static MvcHtmlString PageLinks(this HtmlHelper htmlHelper, Paginacao paginacao, Func<int, string> paginaUrl)
         {
            var resultado = new StringBuilder();
+
+            if (paginacao.TotalPagina == 1) return MvcHtmlString.Create(resultado.ToString());
             for (var i = 1; i <= paginacao.TotalPagina; i++)
             {
                 var tag = new TagBuilder("a");

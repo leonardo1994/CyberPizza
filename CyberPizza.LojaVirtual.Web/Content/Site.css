@@ -132,12 +132,27 @@
     box-shadow: #000000 5px 5px 20px 5px;
 }
 
-/*
-    Definição Página Produto
-*/
-.panel-header {
-    background-color: darkorange;
+
+/*Definição Página Produto*/
+
+
+
+/*Alterado | by : Leonardo Teixeira*/
+
+.panel-default > .panel-heading {
+    background-color: rgb(254, 61, 25);
+    color: white;
+    font-family: Verdana;
 }
+
+.btn-primary {
+    background-color: orangered;
+    border: orangered;
+}
+    .btn-primary:hover {
+        background-color: red;
+    }
+
 .produto-margin {
     margin: auto;
 }

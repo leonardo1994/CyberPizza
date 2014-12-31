@@ -1,11 +1,13 @@
-﻿<!DOCTYPE html>
+﻿@using System.Data.SqlTypes
+@using CyberPizza.LojaVirtual.Web.HtmlHelpers
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - CyberPizza</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
 
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
@@ -43,13 +45,29 @@
         </div>
     </div>
     @Html.Partial("_Carrinho")
-    <div class="container body-content">
-        @RenderBody()
-        @(IsSectionDefined("register") ? RenderSection("register") : RenderPage("~/Views/Shared/_PassoPassoPartial.cshtml"))
-        <hr />
-        <footer class="text-center">
-            <p>&copy; @DateTime.Now.Year - Developed by Esr Softwares</p>
-        </footer>
-    </div>
+<div class="container body-content">
+    @if (ViewData["TextoMsg"] != null && ViewData["Url"] == null)
+    {
+        @Html.MessageStandard((int)ViewData["TipoMsg"], textoMenssagem: ViewData["TextoMsg"].ToString())
+    }
+    else
+    {
+        var o = ViewData["Url"];
+        if (o != null)
+        {
+            var o1 = ViewData["TextoMsg"];
+            if (o1 != null)
+            {
+                @Html.MessageStandard((int)ViewData["TipoMsg"], url: ViewData["Url"].ToString(), textoUrl: ViewData["UrlTexto"].ToString(), textoMenssagem: o1.ToString())
+            }
+        }
+    }
+    @RenderBody()
+    @(IsSectionDefined("register") ? RenderSection("register") : RenderPage("~/Views/Shared/_PassoPassoPartial.cshtml"))
+    <hr/>
+    <footer class="text-center">
+        <p>&copy; @DateTime.Now.Year - Developed by Esr Softwares</p>
+    </footer>
+</div>
 </body>
 </html>

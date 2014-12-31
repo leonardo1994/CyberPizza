@@ -97,9 +97,13 @@
     <Content Include="Content\imgHome\pizzaBackgroundBody.jpg" />
     <Content Include="Content\imgHome\vegeta.jpg" />
     <Content Include="Content\imgPassoPasso\1passo.png" />
+    <Content Include="Content\imgPassoPasso\1passoConf.fw.png" />
     <Content Include="Content\imgPassoPasso\2passo.png" />
+    <Content Include="Content\imgPassoPasso\2passoConf.fw.png" />
     <Content Include="Content\imgPassoPasso\3passo.png" />
+    <Content Include="Content\imgPassoPasso\3passoConf.fw.png" />
     <Content Include="Content\imgPassoPasso\4passo.png" />
+    <Content Include="Content\imgPassoPasso\4passoConf.fw.png" />
     <Content Include="Content\imgProdutos\pizza-calabresa.jpg" />
     <Content Include="Content\imgProdutos\pizza-mussarela.jpg" />
     <Content Include="Content\imgProdutos\pizza-portuguesa.jpg" />
@@ -130,12 +134,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CategoriaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\VitrineController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="HtmlHelpers\MenssagensPadroes.cs" />
     <Compile Include="HtmlHelpers\PaginacaoHelpers.cs" />
     <Compile Include="Models\Paginacao.cs" />
     <Compile Include="Models\ProdutosViewModel.cs" />
@@ -157,6 +163,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\ProdutoDetalhes.cshtml" />
+    <Content Include="Views\Shared\Menu.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -167,6 +174,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\imgCardapio\Bebidas\" />
+    <Folder Include="Views\Categoria\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CyberPizza.LojaVirtual.Dominio\CyberPizza.LojaVirtual.Dominio.csproj">

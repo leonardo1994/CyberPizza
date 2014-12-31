@@ -1,0 +1,27 @@
+﻿@model IEnumerable<string>
+
+@Html.RouteLink("Todos os produtos", new
+{
+    controller = "Vitrine",
+    action = "ListaProdutos",
+    categoria = (string) null,
+    pagina = 1
+}, new
+{
+    @class = "btn btn-block btn-default btn-sm"
+})
+
+@foreach(var link in Model)
+    {
+        @Html.RouteLink(link, new 
+        {
+            controller = "Vitrine",
+            action = "ListaProdutos",
+            categoria = link,
+            pagina = 1
+        }, new
+        {
+            @class = "btn btn-block btn-default btn-sm"
+            + (link == ViewBag.CategoriaSelecionada ? "btn btn-block btn-primary btn-sm" : "")
+        })
+    }
