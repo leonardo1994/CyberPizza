@@ -15,7 +15,12 @@
         </div>
         <div class="panel-footer">
             <div class="btn-group">
-                @Html.ActionLink("Adicionar ", "Index", "ViewLyubomir", new { ukey = Model.ProdutoId }, new { @class = " btn btn-primary btn-sm" })
+                @using (Html.BeginForm("Adicionar", "Carrinho"))
+                {
+                    @Html.HiddenFor(x => x.ProdutoId)
+                    @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+                    <input type="submit" class="btn btn-primary btn-sm" value="Adicionar" />
+                }
                 <button type="button" class="btn btn-default btn-sm link" data-container="body" data-toggle="popover" data-placement="bottom"
                         data-title=@Model.Nome data-content="@Model.Descricao">
                     Detalhe
